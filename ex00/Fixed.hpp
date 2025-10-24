@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:21 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/22 18:57:22 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/24 13:14:15 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,24 @@
 
 class Fixed{
 	private:
-		std::string _name;
+		int _number;
+		static const int raw_bits;
 	public:
+		Fixed(void);
+		Fixed(const Fixed& n);
+		Fixed &operator=(const Fixed& n);
+		~Fixed(void);
 	
 };
 
-class Point {
-public:
-	int x, y;
-
-	Point(int x, int y) : x(x), y(y) {}
-
-	Point operator+(const Point& other) const {
-		return Point(x + other.x, y + other.y);
-	}
+class Vector {
+	public:
+		int	x;
+		int	y;
+	public:
+		Vector(int x, int y): x(x), y(y) {}
+		
+		Vector operator-(Vector& other) {
+			return Vector(x - other.x, y - other.y);
+		}
 };
-
