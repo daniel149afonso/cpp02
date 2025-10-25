@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:21 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/25 15:24:55 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/25 15:28:41 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class Fixed{
 	private:
 		int _number; //the fixed-point number
-		static const int _raw_bits = 8;
+		static const int _raw_bits = 8; //not used in this exercise
 	public:
 		Fixed(void);
-		Fixed(const int n); // not necessary
+		Fixed(const int n); // (optional) not necessary to complete the mandatory part
 		Fixed(const Fixed& n);
 		Fixed &operator=(const Fixed& n);
 		~Fixed(void);

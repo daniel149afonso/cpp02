@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/25 15:14:59 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/25 15:43:43 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed(void): _number(0)
 }
 
 // Constructor with parameters
-Fixed::Fixed(const int n):_number(n)
+Fixed::Fixed(const int n): _number(n)
 {
 	std::cout << "Constructor with parameters called"<<std::endl;
 }
@@ -36,7 +36,7 @@ Fixed& Fixed::operator=(const Fixed& n)
 	std::cout << "Copy assignment operator called" << std::endl;
 
 	if (this != &n) // ⚠️ Protection against auto-assignement (a = a)
-		_number = n._number;
+		_number = n.getRawBits(); // = n._number is also correct
 	return (*this); // ✅ return the current object
 }
 
