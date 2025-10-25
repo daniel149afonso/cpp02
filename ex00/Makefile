@@ -1,0 +1,2 @@
+SRCS = main.cpp \
+		Fixed.cpp
