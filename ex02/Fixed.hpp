@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:21 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/26 21:54:48 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/27 16:42:40 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,10 @@ class Fixed{
 		bool operator!=(const Fixed& n) const;
 
 		// Arithmetic Operators
-		float operator+(Fixed& n) const;
-		float operator-(Fixed& n) const;
-		float operator*(Fixed& n) const;
-		float operator/(Fixed& n) const;
-		static Fixed min(Fixed& n1, Fixed& n2);
-		static Fixed max(Fixed& n1, Fixed& n2);
+		Fixed operator+(const Fixed& n) const;
+		Fixed operator-(const Fixed& n) const;
+		Fixed operator*(const Fixed& n) const;
+		Fixed operator/(const Fixed& n) const;
 
 		// Incrementation / decrementation
 		Fixed& operator++();    // pré-incrément (++a)
@@ -56,10 +54,10 @@ class Fixed{
 		Fixed operator--(int);  // post-décrément (a--)
 
 		// Functions min / max
-		// static Fixed& min(Fixed& a, Fixed& b);
-		// static const Fixed& min(const Fixed& a, const Fixed& b);
-		// static Fixed& max(Fixed& a, Fixed& b);
-		// static const Fixed& max(const Fixed& a, const Fixed& b);
+		static Fixed& min(Fixed& a, Fixed& b);
+		static const Fixed& min(const Fixed& a, const Fixed& b);
+		static Fixed& max(Fixed& a, Fixed& b);
+		static const Fixed& max(const Fixed& a, const Fixed& b);
 
 		// Getter
 		int getRawBits(void) const;

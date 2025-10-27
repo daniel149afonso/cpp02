@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/26 21:54:05 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/27 17:09:03 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,28 +97,42 @@ bool Fixed::operator<(const Fixed& n) const
 }
 
 bool Fixed::operator>=(const Fixed& n) const
-{ return _number >= n._number; }
-bool Fixed::operator<=(const Fixed& n) const { return _number <= n._number; }
-bool Fixed::operator==(const Fixed& n) const { return _number == n._number; }
-bool Fixed::operator!=(const Fixed& n) const { return _number != n._number; }
+{
+	return _number >= n._number;
+}
+
+bool Fixed::operator<=(const Fixed& n) const
+{
+	return _number <= n._number;
+}
+
+bool Fixed::operator==(const Fixed& n) const
+{
+	return _number == n._number;
+}
+
+bool Fixed::operator!=(const Fixed& n) const
+{
+	return _number != n._number;
+}
 
 // Arithmetic Operators
-float Fixed::operator+(Fixed& n) const
+Fixed Fixed::operator+(const Fixed& n) const
 {
-	return (this->toFloat() + n.toFloat());
+	return Fixed(this->toFloat() + n.toFloat());
 }
 
-float Fixed::operator-(Fixed& n) const
+Fixed Fixed::operator-(const Fixed& n) const
 {
-	return (this->toFloat() - n.toFloat());
+	return Fixed(this->toFloat() - n.toFloat());
 }
 
-float Fixed::operator*(Fixed& n) const
+Fixed Fixed::operator*(const Fixed& n) const
 {
-	return (this->toFloat() * n.toFloat());
+	return Fixed(this->toFloat() * n.toFloat());
 }
 
-float Fixed::operator/(Fixed& n) const
+Fixed Fixed::operator/(const Fixed& n) const
 {
 	int	diviser;
 
@@ -128,14 +142,47 @@ float Fixed::operator/(Fixed& n) const
 		std::cout << "Error\n Division by 0 forbidden."<<std::endl;
 		return (-1);
 	}
-	return (this->toFloat() / n.toFloat());
+	return Fixed(this->toFloat() / n.toFloat());
 }
 
 // Incrementation / decrementation
-//...Building
+Fixed& Fixed::operator++()
+{
+	_number++; return *this;
+}
+
+Fixed Fixed::operator++(int)
+{ 
+	Fixed tmp(*this); _number++; return tmp;
+}
+
+Fixed& Fixed::operator--()
+{
+	_number--; return *this;
+}
+
+Fixed Fixed::operator--(int)
+{ 
+	Fixed tmp(*this); _number--; return tmp;
+}
 
 // --- Fonctions min / max ---
-// Fixed& Fixed::min(Fixed& a, Fixed& b) { return (a < b ? a : b); }
-// const Fixed& Fixed::min(const Fixed& a, const Fixed& b) { return (a < b ? a : b); }
-// Fixed& Fixed::max(Fixed& a, Fixed& b) { return (a > b ? a : b); }
-// const Fixed& Fixed::max(const Fixed& a, const Fixed& b) { return (a > b ? a : b); }
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	return (a < b ? a : b);
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	return (a < b ? a : b);
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	return (a > b ? a : b);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	return (a > b ? a : b);
+}
