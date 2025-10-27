@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:21 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/27 16:42:40 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/27 20:16:40 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ class Fixed{
 		float toFloat(void) const;
 		int toInt(void) const;
 };
-// 
+
 std::ostream &operator<<(std::ostream &out, const Fixed &value);
 
 #endif
