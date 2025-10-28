@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:21 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/25 15:28:41 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/28 14:28:57 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,3 @@ class Fixed{
 };
 
 #endif
-
-//Exemple Surchage d'opérateur:
-// class Vector {
-// 	public:
-// 		int	x;
-// 		int	y;
-// 	public:
-// 		Vector(int x, int y): x(x), y(y) {}
-		
-// 		Vector operator-(Vector& other) {
-// 			return Vector(x - other.x, y - other.y);
-// 		}
-// };

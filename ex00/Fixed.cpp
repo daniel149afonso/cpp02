@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/25 15:43:43 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/28 15:09:46 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Fixed& Fixed::operator=(const Fixed& n)
 	std::cout << "Copy assignment operator called" << std::endl;
 
 	if (this != &n) // ⚠️ Protection against auto-assignement (a = a)
-		_number = n.getRawBits(); // = n._number is also correct
+		_number = n._number; // = n._number is also correct
 	return (*this); // ✅ return the current object
 }
 
