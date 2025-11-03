@@ -139,7 +139,7 @@ Fixed Fixed::operator/(const Fixed& n) const
 	diviser = n.toFloat();
 	if (diviser == 0)
 	{
-		std::cout << "Error\n Division by 0 forbidden."<<std::endl;
+		std::cout << "Error: Division by 0 forbidden."<<std::endl;
 		return (-1);
 	}
 	return Fixed(this->toFloat() / n.toFloat());
@@ -148,22 +148,28 @@ Fixed Fixed::operator/(const Fixed& n) const
 // Incrementation / decrementation
 Fixed& Fixed::operator++()
 {
-	_number++; return *this;
+	_number++;
+	return *this;
 }
 
 Fixed Fixed::operator++(int)
 { 
-	Fixed tmp(*this); _number++; return tmp;
+	Fixed tmp(*this);
+	_number++;
+	return tmp;
 }
 
 Fixed& Fixed::operator--()
 {
-	_number--; return *this;
+	_number--;
+	return *this;
 }
 
 Fixed Fixed::operator--(int)
 { 
-	Fixed tmp(*this); _number--; return tmp;
+	Fixed tmp(*this);
+	_number--;
+	return tmp;
 }
 
 // --- Fonctions min / max ---
