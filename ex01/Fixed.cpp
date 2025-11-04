@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:30 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/29 14:58:02 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/04 16:48:46 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(void): _number(0)
 // Constructor with parameters
 Fixed::Fixed(const int n)
 {
-	_number = n << _raw_bits; // décalage binaire à gauche = multiplication par 2^_raw_bits
+	_number = n << _raw_bits; // décalage binaire à gauche = multiplication par 2^_raw_bits = 256
 	std::cout << "Int constructor called"<<std::endl;
 }
 

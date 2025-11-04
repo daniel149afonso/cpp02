@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 17:24:21 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/28 14:28:57 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/04 16:53:07 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Fixed{
 		Fixed(const Fixed& n);
 		Fixed &operator=(const Fixed& n);
 		~Fixed(void);
+
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 	
